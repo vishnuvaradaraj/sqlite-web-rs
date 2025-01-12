@@ -149,7 +149,8 @@ export class SQLite {
       return new this.sqlite3.oo1.OpfsDb(database_url);
     } catch (error) {
       console.log("OPFS open error", error);
-      throw error;
+	  return new this.sqlite3.oo1.DB(database_url, 'ct');
+      //throw error;
     }
   }
 
