@@ -146,11 +146,11 @@ export class SQLite {
 
   open(database_url, iflags) {
     try {
-      return new this.sqlite3.oo1.OpfsDb(database_url);
-    } catch (error) {
-      console.log("OPFS open error", error);
+      //return new this.sqlite3.oo1.OpfsDb(database_url);
 	  return new this.sqlite3.oo1.DB(database_url, 'ct');
-      //throw error;
+    } catch (error) {
+      console.log("non OPFS open error", error);
+	  throw error;
     }
   }
 
